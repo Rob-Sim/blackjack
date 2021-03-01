@@ -1,0 +1,436 @@
+
+/* media query manager
+1em = 16px
+
+width
+1200px - 75em
+1600px - 100em
+1600px normal style
+>150em
+*/
+@media(min-width: 150em) and (min-height: 73em){
+    #header__name{
+        font-size: 10rem;
+        padding: 3rem 3rem;
+        border-bottom: .3rem solid black;
+    }
+    .sidebar__label{
+        font-size: 3.5rem;
+        padding-top: 4rem;
+    }
+    .recordBar__tag{
+        font-size: 7rem;
+    }
+    .cpuCards__label , .userScore__total--title{
+        font-size: 4rem;
+        padding-top: 2rem;
+    }
+    #cpuCards__total--display, #userScore__currentScore{
+        font-size: 5rem;
+    }
+    .cardImg{
+        width: 17rem;
+    }
+    .card{
+        width: 17rem;
+        height: 25.5rem;
+        margin: 1.6rem 2rem 1.6rem 0rem;
+    }
+    .safeProbability{
+        font-size: 3rem;
+    }
+    #hitButton__label, #stickButton__label{
+        font-size: 16rem;
+        font-weight: 800;
+    }
+    #stakeBar__label{
+        font-size: 3rem;
+        padding-bottom: 3rem;
+    }
+    .stakeBar__btn--inner{
+        width: 7.5rem;
+        height: 7.5rem;
+        font-size: 6rem;
+    }
+    .stakeBar__btn--outer{
+        width: 8rem;
+        height: 8rem;
+        border: black 2.9px solid;
+    }
+    #stakeBar__enter{
+        height: 10rem;
+        width: 10rem;
+        font-size: 3rem;
+    }
+    .stakeBar__funds{
+        font-size: 3.5rem;
+        margin-bottom: 10%;
+    }
+    #stakeBar__gameStatus{
+        font-size: 9.5rem;
+    }
+    #statusBar__fundsDisplayGame{
+        font-size: 6rem;
+    }
+    .nextCard__title, #nextCard__label, .nextCard__status, #nextCard__status--word {
+        font-size: 3.7rem;
+    }
+    #nextCard__img{
+        width: 15rem;
+    }
+    #bustUserLost{
+        font-size: 4.2rem;
+        line-height: 5.5rem;
+    }
+    #bustUserLost--pastTotalStatus, #pastTotal{
+        font-size: 7rem;
+    }
+    #statusBar__moneyInOut, #statusBar__stickBust, #statusBar__winLoss{
+        font-size: 5.5rem;
+    }
+    .resetGame{
+        font-size: 3rem;
+    }
+    .gameInfo__tag{
+        font-size: 3.7rem;
+    }
+    .infoBox__rules{
+        margin: 6rem 8% 0 8%;
+        font-size: 4.5rem;
+        line-height: 5rem;
+    }
+    .infoBox__record--label{
+        font-size: 6rem;
+    }
+    .infoBox__recordBar--tag{
+        font-size: 4rem;
+    }
+}
+
+@media(max-width: 100em) , (max-height: 60em){
+
+    .recordBar__tag{
+        font-size: 4rem;
+    }
+
+    .cardImg{
+        width: 11rem;
+    }
+    .card{
+        width: 12rem;
+        height: 17rem;
+    }
+
+    .gameButton{
+        font-size: 8rem;
+    }
+
+    .stakeBar__btn--inner{
+        width: 4.9rem;
+        height: 4.9rem;
+        font-size: 3rem;
+    }
+    .stakeBar__btn--outer{
+        width: 5.6rem;
+        height: 5.6rem;
+    }
+    #stakeBar__allIn{
+        position: unset;
+    }
+    .nextCard__title,  #nextCard__label{
+        font-size: 2.6rem;
+    }
+    #nextCard__img{
+        width: 10rem;
+    }
+    #bustUserLost--pastTotalStatus{
+        font-size: 3rem;
+    }
+
+    /* footer */
+    .gameInfo{
+        font-size: 2.1rem;
+        padding: 0 4rem;
+        font-weight: 400;
+    }
+    .spacer{
+        height: 60%;
+    }
+    .spacer--right, .spacer--left{
+        transform: rotate(0deg);
+    }
+
+    /* InfoBox */
+    .infoBox__rules{
+        padding: 2rem 3rem;
+        font-size: 2.2rem;
+        text-align: left;
+    }
+}
+
+@media(max-width: 75em){
+
+    #header__twoTone--left{
+        clip-path: polygon(0 0, 85% 0%, 50% 100%, 0% 100%);
+        width: 26%;
+    }
+    
+    #header__twoTone--right{
+        clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 15% 100%);
+    }
+
+    .sidebar{
+        width: 20vw;
+    }
+
+    .playArea__twoTone{
+        clip-path: polygon(50% 50%, 100% 0, 0 0, 0% 100%);
+    }
+
+    .cardImg{
+        width: 10rem;
+    }
+    .card{
+        width: 10rem;
+        height: 15.5rem;
+    }
+
+    /* stakeBar */
+    .nextCard__title{
+        font-size: 2.4rem;
+        
+    }
+
+    #statusBar__stickBust,#statusBar__winLoss{
+        font-size: 3rem;
+    }
+
+    /* footer */
+    .spacer{
+        display: none;
+    }
+    #gameInfo__tag--riskyHits, #gameInfo__tag--wrongSticks{
+        display: none;
+    }
+
+    .infoBox__rules{
+        font-size: 1.7rem;
+        line-height: 3rem;
+    }
+    #infobox__record{
+        font-size: 1.5rem;
+    }
+}
+
+
+@media(max-width: 56.25em),(max-height: 47.8em){
+
+    #header__twoTone--left, #header__twoTone--right{
+        width: 72vw;
+    }
+
+    .header__logo{
+        width: 7rem;
+        height: 7rem;
+    }
+    #header__name{
+        font-size: 5rem;
+        z-index: 30000;
+    }
+    #header__infoButton{
+        width: 5rem;
+        height: 5rem;
+    }
+    .sidebar__label{
+        font-size: 1.4rem;
+    }
+    .recordBar__tag{
+        font-size: 4rem;
+    }
+
+    .cardContainer{
+        flex-wrap: wrap;
+    }
+
+    .cardImg{
+        width: 9rem;
+    }
+    .card{
+        width: 9rem;
+        height: 14rem;
+        /* padding: 2rem .4rem; */
+    }
+
+    .gameButton{
+        margin-top: .5rem;
+        bottom: 0;
+        height: 12vh;
+        width: 46vw;
+    }
+
+    #hitButton{
+        clip-path: polygon(0 0, 100% 0%, 40% 100%, 0% 100%);
+    }
+
+    #stickButton{
+        clip-path: polygon(60% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    .stakeBar__btn--inner{
+        border-radius: 50%;
+        width: 6rem;
+        height: 6rem;
+    }
+    .stakeBar__btn--outer{
+        border: none;
+    }
+
+    #nextCard__img{
+        width: 8rem;
+    }
+
+    #statusBar__stickBust,#statusBar__winLoss{
+        font-size: 2.2rem;
+    }
+    #bustUserLost{
+        font-size: 2rem;
+        line-height: 2.4rem;
+    }
+    #bustUserLost--pastTotalStatus{
+        font-weight: 500;
+    }
+
+    #reset{
+        border-radius: 50%;
+        width: 6.3vw;
+        height: 6.3vw;
+    }
+    #reset--PA{
+        display: none;
+    }
+    #reset--smaller{
+        display: block;
+        transform: rotate(90deg);
+        font-size: 2.5rem;
+    }
+
+    #gameInfo__tag--tos, #gameInfo__tag--busts{
+        display: none;
+    }
+    .infoBox__rules{
+        line-height: 2rem;
+    }
+}
+
+@media(max-width: 35.8em),(max-height: 42.8em){
+    .header{
+        height: 9vh;
+    }
+    #header__name{
+        border-bottom: none;
+    }
+    .sidebar{
+        height: 85.9vh;
+    }
+    .sidebar__label{
+        font-size: 1.1rem;
+    }
+    .mainBody{
+        height: 86vh;
+    }
+    .playArea{
+        justify-content: start;
+    }
+    .cpuCards{
+        margin-bottom: 12vh;
+    }
+    .userScore__total--title{
+        font-size: 2.3rem;
+    }
+    #userScore__currentScore{
+        font-size: 3rem;
+    }
+    #userScore__cardAdded{
+        font-size: 2.5rem;
+    }
+    .card{
+        padding: .5rem;
+        height: 11rem;
+        width: 7rem;
+    }
+    .cardImg{
+        width: 7rem;
+    }
+    .safeProbability{
+        font-size: 1.8rem;
+    }
+    .gameButton{
+        height: 8vh;
+        font-size: 5rem;
+    }
+    .stakeBar__btn--inner{
+        height: 5rem;
+        width: 5rem;
+    }
+    #stakeBar__enter{
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+    #stakeBar__allIn{
+        width: 6rem;
+        height: 6rem;
+    }
+    .stakeBar__funds{
+        font-size: 2.1rem;
+    }
+    #stakeBar__gameStatus{
+        font-size: 5.5rem;
+    }
+    #bustUserLost{
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+    #bustUserLost--pastTotalStatus{
+        font-size: 2.6rem;
+    }
+    .nextCard__title,#nextCard__label,.nextCard__status{
+        line-height: 2rem;
+        font-size: 2rem;
+    }
+    #nextCard__status--word{
+        font-size: 2.3rem;
+    }
+    #nextCard__img{
+        width: 6rem;
+    }
+    #statusBar__fundsDisplayGame{
+        font-size: 2.6rem;
+    }
+    .gameInfo{
+        justify-content: space-around;
+    }
+    #gameInfo__tag--winRate{
+        display: none;
+    }
+    #reset--smaller{
+        font-size: 1.6rem;
+    }
+    .gameInfo{
+        height: 5vh;
+    }
+    #infoBox{
+        top: 9vh;
+        height: 91vh;
+    }
+    .infoBox__rules{
+        line-height: 1.5rem;
+    }
+
+
+}
+
+/* @media (max-height: 48em){
+    .card{
+        padding-top: .5rem;
+    }
+} */

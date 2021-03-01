@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/png" href="assets/images/playing-card.png" />
+    <link rel="stylesheet" href="CSS/styles.css">
+    <!-- <link rel="stylesheet" href="CSS/queries.css"> -->
+
+    <title>Blackjack game</title>
+</head>
+<body>
+    <!-- BEM Methodology used -->
+
+    <!-- header -->
+    <header class="header bar">
+        <div class="header__twoTone" id="header__twoTone--left"></div>
+
+        <!-- Black portion of header, info button (capital I), and rest of header -->
+        <h1 id="header__name"><span id="header__name--black">B<span id="header__infoButton">I</span>ack</span>jack</h1>
+        
+        <div class="header__twoTone" id="header__twoTone--right"></div>
+    </header>
+
+
+    <!-- MAIN BODY -->
+    <!-- Stores everything other than header and footer (between) - sidebars and playarea -->
+    <div class="mainBody" id="mainBodyID">
+            <!-- Secondary left sidebar displays record -->
+        <div class="sidebar bar recordBar">
+            <p class="sidebar__label">Record</p>
+            <div id="recordBar__items">
+                <!-- Recent record stored here -->
+                <!-- <p class="recordBar__tag" id="recordItem + recordBarPointer">stakesPlaced</p> -->
+            </div>
+        </div>
+
+        <!-- Play area -->
+        <!-- Stores the game buttons, cards  -->
+        <div class="playArea">
+            <div class="playArea__twoTone"></div>
+
+            <!-- cpus cards display -->
+            <div class="cpuCards">
+                <h3 class="cpuCards__label">CPUs Cards:</h3>
+                <p id="cpuCards__total--display">  - </p>
+                <!-- Cards added into this container for the cpu -->
+                <div id="cpuCards__container" class="cardContainer">
+                    <!-- see userCards for created card HTML -->
+                </div>
+            </div>
+
+            <p class="safeProbability">Safety Probability- <span id="safeProbability__percentage"></span>%</p>
+
+            <div class="userPlayContainer">
+                <div class="userScore">
+                    <h2 class="userScore__total--title"> Current hand is:</h2>
+                    <!-- Appended to display current score within game -->
+                    <h4> 
+                        <span id="userScore__currentScore">  0 </span>
+                        <span id="userScore__cardAdded"> +0 </span>
+                    </h4>
+                </div>
+                <!-- Container for users cards -->
+                <div id="userCards" class="cardContainer">
+                <!-- <div id='card+cardIndexNum' class='card'>
+                         //front side of card
+                         <div id='card + cardIndexNum + __side--front' class='card__side card__side--front'>
+                             <img src='assets/images/red_back.png' class='cardImg redBack'>
+                         </div>
+    
+                         Back side of card
+                         <div id='card + cardIndexNum + __side--back' class='card__side card__side--back'>
+                             <img src='assets/images/ + card + .png' alt=' + card + 'title = '+ card + 'class='cardImg cardType'>
+                         </div>
+                    </div> -->
+                </div>
+            </div>
+
+            <!-- Game buttons -->
+            <div class="playButtons">
+                <button class="gameButton hidden" id="hitButton"> <span id="hitButton__label">✓</span> </button>
+                <button class="gameButton hidden" id="stickButton"> <span id="stickButton__label">×</span> </button>
+            </div>
+        </div>
+
+        <!-- Tertiary right sidebar displays stakes -->
+        <div class="bar sidebar">
+            <div class="topOfRightSidebar">
+                <div id = "stakeBar" class="">
+                    <div id="stakeBar__gameStatus" class="hidden">safe</div>
+
+                    <div id="stakeBar__elements" class="hidden">
+                        <h3 class="sidebar__label" id="stakeBar__label">Enter bet</h3>
+                        <!-- betting buttons -->
+                        <div class="stakeBar__btn--container">
+                            <div class="stakeBar__btn--outer stakeBar__btn"></div>
+                            <a class="stakeBar__btn--inner stakeBar__btn"  id="stakesBtnPlus"> + </a>
+                        </div>
+
+                        <button id="stakeBar__enter">0</button>
+
+                        <div class="stakeBar__btn--container">
+                            <div class="stakeBar__btn--outer stakeBar__btn"></div>
+                            <a class="stakeBar__btn--inner stakeBar__btn"  id="stakesBtnMinus">-</a>
+                        </div>
+                        <p class="stakeBar__funds">Funds: <span id="funds__num">500</span></p>
+                    </div>
+                </div>
+
+                <div id="nextCard" class="">
+                    <div class="nextCard__elements">
+                        <h1 class="nextCard__title">Next card:</h1>
+                        <p id="nextCard__label">A2</p>
+                        <img src="/assets/images/2C.png" alt="next card" id="nextCard__img">
+                        <p class="nextCard__status">Leaving you <br> <span id="nextCard__status--word">Bust</span> </p>
+                    </div>
+                </div>
+
+                <div id="bustUserLost" class="">
+                    <p>If you didn't take that last <span id="BUL--card"></span> you would have</p>
+                    <p id="bustUserLost--pastTotalStatus">Lost</p>
+                    <p>with a total of </p>
+                    <p id="pastTotal"> 0</p>
+                </div>
+
+            </div>
+
+            <div class="statusBar" id="statusBar">
+                <button id="stakeBar__allIn" class="hidden">All in</button>
+
+                <h3 id="statusBar__fundsDisplayGame" class="hidden"></h3>
+                <!-- Hidden until the game ends. shows game results -->
+                <div id = "statusHidden" class="">
+                    <div class="statusBar__elements promptFlash" id="statusBar__elementsID">
+                        <h4 id="statusBar__moneyInOut">+0</h4>
+                        <h4 id="statusBar__stickBust">Bust</h4>
+                        <h4 id="statusBar__winLoss">WIN</h4>
+                        <button id="reset" class="resetGame"> <span id="reset--PA">Play Again</span><span id="reset--smaller">↻</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Game info bottom bar shows wins, losses and draws -->
+    <footer class="gameInfo bar">
+        <p class="gameInfo__tag" id = "gameInfo__tag--riskyHits">Risky:<span id="gameInfo__riskyHits">0</span></p>
+        <div class="spacer spacer--left"></div>
+        <p class="gameInfo__tag" id = "gameInfo__tag--winRate">Win rate%:<span id="gameInfo__winPercentage">0</span></p>
+        <div class="spacer spacer--left"></div>
+        <p class="gameInfo__tag">Wins:<span id="gameInfo__wins">0</span></p>
+        <div class="spacer spacer--left"></div>
+        <p class="gameInfo__tag">Draws:<span id="gameInfo__draws">0</span></p>
+        <div class="spacer"></div>
+        <p class="gameInfo__tag">Losses:<span id="gameInfo__losses">0</span></p>
+        <div class="spacer  spacer--right"></div>
+        <p class="gameInfo__tag" id = "gameInfo__tag--wrongSticks">Wrong sticks:<span id="gameInfo__wrongSticks">0</span></p>
+        <div class="spacer  spacer--right"></div>
+        <p class="gameInfo__tag" id = "gameInfo__tag--tos">21s:<span id="gameInfo__21s">0</span></p>
+        <div class="spacer spacer--right"></div>
+        <p class="gameInfo__tag" id = "gameInfo__tag--busts">Busts:<span id="gameInfo__busts">0</span></p>
+    </footer>
+
+    <div id = "infoBox">
+        <div class="infoBox__twoTone infoBox__twoTone--left"></div>
+        <div class="infoBox__twoTone infoBox__twoTone--right"></div>
+        <div class="infoBox__textContainer">
+            <p class="infoBox__rules">Blackjack (or 21) is a card game in which the objective
+                is to attempt to reach as close to the number 21 as possible. You will recieve your
+                initial cards and use your intuition to decipher whether or not
+                you should take another card and raise your score in order to get closer to 21 -
+                or whether you should stick at your current number. You are trying to get
+                closer to the objective than your opponent to win the game!
+                <br>
+
+                Cards are worth their displayed value, other than picture cards in which are worth
+                10 each. Such cards are the King, Queen, and Jack. The Ace card's value is determined
+                based upon your current score. If you are able take 11 to your current score, that is the
+                Ace's value. If you cannot - it is worth 1.
+
+                <br>
+                You can bet on your hand at the beginning of the round to the right when you recieve your
+                initial cards, but you don't have to. We've given you 400 credits to start of with.
+                If you lose on that hand - all of
+                the money you bet will be lost. If you win however, you will
+                double the money you placed down.
+
+                <br>
+                We will keep track of how many wins, losses and draws you get below,
+                with the addition of how many risky hits you take
+                (when you take a card above a score of 13), your win rate percentage,
+                the amount of times you unnecessarily stuck at a total in which you could
+                have taken another card and been safe (wrong sticks), the amount of perfect
+                scores you had (21s), and the amount of times you go bust.
+
+                <br>
+                To aid your betting endeavors, there is also a handy figure below your cards which
+                details the probability your next card will be safe.
+            </p>
+        </div>
+
+        <p class="infoBox__record--label">Record: </p>
+        <div id="infoBox__record">
+        </div>
+    </div>
+
+    <script type="text/javascript" src="assets/javascript/variables.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+</html>
